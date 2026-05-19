@@ -12,7 +12,7 @@
 Бавенкова А. Dev, feature/training Тренировка переводов слов, подсчет слов в словаре
 
 ## Как запустить проект
-1. Склонируйте репозиторий: git clone 
+1. Склонируйте репозиторий: git clone https://github.com/Thatkidsaid2009/ProjectSPBSTU-.git
 2. Создайте виртуальное окружение: python -m venv .venv
 3. Активируйте: source .venv/bin/activate (Linux/macOS) или .venv\Scripts\activate (Windows)
 4. Установите зависимости: pip install -r requirements.txt
