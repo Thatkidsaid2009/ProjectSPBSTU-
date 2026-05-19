@@ -20,4 +20,3 @@ def view_vocabulary(dictionar):
             break
         else:
             i = req*10
-view_vocabulary()
