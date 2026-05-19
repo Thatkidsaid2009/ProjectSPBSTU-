@@ -1,17 +1,30 @@
+import sys
 def create_dictionary():
     answer = input("Хотите создать словарь (да/нет): ").strip().lower()
     
     if answer == "да":
+        print('Словарь создан!')
         return {}
     elif answer == "нет":
-        return {}
+         print('До свидания!')
+         sys.exit(1)
     else:
-        print("Введите 'да' или 'нет'.")
-        return create_dictionary()
+        while True:
+            print("Введите 'да' или 'нет'.")
+            answer = input()
+            if answer == "да":
+                print('Словарь создан!')
+                return {}
+                break
+            elif answer == "нет":
+                print('До свидания!')
+                sys.exit(1)
+            else:
+                continue
 
 def add_word(dictionary):
     while True:
-        translation = input("Введите перевод (или 'стоп' для выхода): ").strip()
+        translation = input("Введите перевод и пример предложения через запятую (или 'стоп' для выхода): ").strip()
         
         if translation.lower() == 'стоп':
             return False
@@ -25,24 +38,17 @@ def add_word(dictionary):
             print(f"Текущее слово: {dictionary[translation.lower()]['word']}")
             continue
         
-        word = input(f"Слово для перевода '{translation}': ").strip()
+        word = input(f"Перевод слова '{translation}' ").strip()
         if not word:
             print("Слово не может быть пустым.")
             continue
         
-        example = input(f"Пример предложения с '{word}': ").strip()
-        if not example:
-            print("Пример не может быть пустым.")
-            continue
         
-        dictionary[translation.lower()] = {
-            "translation": translation,
-            "word": word,
-            "example": example
-        }
+        dictionary[translation] = word
         
         print(f"Перевод '{translation}' добавлен для слова '{word}'!")
         return True
+    return dictionary
 
 def main():
     dictionary = create_dictionary()

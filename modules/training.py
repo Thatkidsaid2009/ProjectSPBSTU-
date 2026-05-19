@@ -3,9 +3,9 @@
 """
 import random
 
-def get_word_count(dictionary: dict) -> int:
+def get_word_count(dictionary: dict):
     """Функция 5: возвращает количество слов в словаре"""
-    return len(dictionary)
+    print(f'Слов в словаре: {len(dictionary)}')
 
 def start_training(dictionary):
     """
